@@ -27,8 +27,10 @@ export type User = {
 
 export interface UserController {
   getAll: controllerHandler;
+  getUserById: controllerHandler;
 }
 
 export interface UserModel {
   getAll: () => Promise<User[]>;
+  getUserById: (id: string) => Promise<User>;
 }

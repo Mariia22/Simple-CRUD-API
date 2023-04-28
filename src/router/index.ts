@@ -20,7 +20,7 @@ export const router = (req: IncomingMessage, res: ServerResponse<IncomingMessage
     switch (method) {
       case httpMethods.GET:
         if (url.match(regexAPIId)) {
-          res.end('ok');
+          controller.getUserById(req, res);
         } else {
           controller.getAll(req, res);
         }

@@ -1,8 +1,8 @@
-export const printNotFoundMessage = (id: number): string => {
+export const printNotFoundMessage = (id: string): string => {
   return `User with id: ${id} is not found.`;
 };
 
-export const printBadRequestMessage = (id: number): string => {
+export const printBadRequestMessage = (id: string): string => {
   return `User's id: ${id} is invalid.`;
 };
 
@@ -16,4 +16,8 @@ export const printApiNotFoundMessage = (url: string): string => {
 
 export const printInternalErrorMessage = (): string => {
   return `Server not responding`;
+};
+
+export const getIdFromURL = (url: string): string => {
+  return url.split('/')[3];
 };
