@@ -60,9 +60,3 @@ export class UsersController implements UserController {
     res.end(JSON.stringify(data));
   }
 }
-
-// {
-//   "age": 33,
-//   "username": "Mariia",
-//   "hobbies": ["Coding"]
-// }
