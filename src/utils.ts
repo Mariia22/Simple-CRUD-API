@@ -14,6 +14,10 @@ export const printBodyBadRequestMessage = (): string => {
   return `Body does not contain required fields`;
 };
 
+export const printBodyBadFieldsMessage = (): string => {
+  return `Body contains invalid field`;
+};
+
 const printBodyInvalidDataMessage = (): string => {
   return `Invalid data`;
 };

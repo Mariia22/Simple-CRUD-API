@@ -32,13 +32,13 @@ export interface UserController {
   getUserById: controllerHandler;
   postUser: controllerHandler;
   deleteUser: controllerHandler;
-  // updateUser: controllerHandler;
+  updateUser: controllerHandler;
 }
 
 export interface UserModel {
   getAll: () => Promise<User[]>;
   getUserById: (id: string) => Promise<User>;
   postUser: (user: UserRequest | {}) => Promise<User>;
-  deleteUser: (id: string)=> Promise<string>;
-  // updateUser: (id: string)=>Promise<User>;
+  deleteUser: (id: string) => Promise<string>;
+  updateUser: (id: string, user: UserRequest | {}) => Promise<User>;
 }

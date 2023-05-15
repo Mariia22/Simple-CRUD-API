@@ -33,6 +33,9 @@ export const router = () => {
         case httpMethods.DELETE:
           await controller.deleteUser(req, res);
           break;
+        case httpMethods.PUT:
+          await controller.updateUser(req, res);
+          break;
       }
     } catch (error) {
       const { message, statusCode } =

@@ -36,7 +36,19 @@ export class UsersController implements UserController {
     try {
       const id = getIdFromURL(req.url);
       const result = await this.userModel.deleteUser(id);
-      this.sendResponse(result, res);
+      this.sendResponse(result, res, httpStatusCode.DELETED);
+    } catch (error) {
+      const { message, statusCode } = error;
+      this.sendResponse(message, res, statusCode);
+    }
+  }
+
+  async updateUser(req: IncomingMessage, res: ServerResponse<IncomingMessage>) {
+    try {
+      const id = getIdFromURL(req.url);
+      const body = await getBodyFromReq(req);
+      const user = await this.userModel.updateUser(id, body);
+      this.sendResponse(user, res);
     } catch (error) {
       const { message, statusCode } = error;
       this.sendResponse(message, res, statusCode);
