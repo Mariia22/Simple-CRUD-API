@@ -9,6 +9,7 @@ import {
   validateUserBody,
   printBodyBadFieldsMessage,
 } from '../utils';
+import { deletedMessage } from '../config';
 
 export class UsersModel implements UserModel {
   constructor(private users: User[]) {}
@@ -46,7 +47,7 @@ export class UsersModel implements UserModel {
       const index: number = this.users.findIndex((user) => user.id === id);
       if (index >= 0) {
         this.users.splice(index, 1);
-        return 'User was deleted';
+        return deletedMessage;
       } else {
         throw new Api404Error(printNotFoundMessage(id));
       }
@@ -54,7 +55,6 @@ export class UsersModel implements UserModel {
   }
 
   async updateUser(id: string, body: UserRequest) {
-    console.log(Object.keys(body));
     if (!validate(id)) {
       throw new Api400Error(printBadRequestMessage(id));
     } else if (Object.keys(body).includes('id')) {

@@ -11,15 +11,15 @@ export const printBadRequestMessage = (id: string): string => {
 };
 
 export const printBodyBadRequestMessage = (): string => {
-  return `Body does not contain required fields`;
+  return `Body does not contain required fields.`;
 };
 
 export const printBodyBadFieldsMessage = (): string => {
-  return `Body contains invalid field`;
+  return `Body contains invalid field.`;
 };
 
 const printBodyInvalidDataMessage = (): string => {
-  return `Invalid data`;
+  return `Invalid data.`;
 };
 
 export const printApiNotFoundMessage = (url: string): string => {
@@ -27,7 +27,7 @@ export const printApiNotFoundMessage = (url: string): string => {
 };
 
 export const printInternalErrorMessage = (): string => {
-  return `Server not responding`;
+  return `Server not responding.`;
 };
 
 export const getIdFromURL = (url: string): string => {
