@@ -30,6 +30,9 @@ export const router = () => {
         case httpMethods.POST:
           await controller.postUser(req, res);
           break;
+        case httpMethods.DELETE:
+          await controller.deleteUser(req, res);
+          break;
       }
     } catch (error) {
       const { message, statusCode } =

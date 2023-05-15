@@ -27,13 +27,11 @@ export type User = {
 
 export type UserRequest = Pick<User, 'username' | 'age' | 'hobbies'>;
 
-export type Deleted = 'deleted';
-
 export interface UserController {
   getAll: controllerHandler;
   getUserById: controllerHandler;
   postUser: controllerHandler;
-  // deleteUser: controllerHandler;
+  deleteUser: controllerHandler;
   // updateUser: controllerHandler;
 }
 
@@ -41,6 +39,6 @@ export interface UserModel {
   getAll: () => Promise<User[]>;
   getUserById: (id: string) => Promise<User>;
   postUser: (user: UserRequest | {}) => Promise<User>;
-  // deleteUser: (id: string)=> Promise<Deleted>;
+  deleteUser: (id: string)=> Promise<string>;
   // updateUser: (id: string)=>Promise<User>;
 }

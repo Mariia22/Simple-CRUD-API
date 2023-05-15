@@ -32,4 +32,19 @@ export class UsersModel implements UserModel {
       throw new Api400Error(printBodyBadRequestMessage());
     }
   }
+
+  async deleteUser(id: string) {
+    if (!validate(id)) {
+      throw new Api400Error(printBadRequestMessage(id));
+    } else {
+      const index: number = this.users.findIndex((user) => user.id === id);
+      console.log(index);
+      if (index >= 0) {
+        this.users.splice(index, 1);
+        return 'User was deleted';
+      } else {
+        throw new Api404Error(printNotFoundMessage(id));
+      }
+    }
+  }
 }
