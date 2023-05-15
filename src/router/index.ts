@@ -9,7 +9,6 @@ import { UsersController } from '../controllers/usersController';
 import { UsersModel } from '../models/usersModel';
 
 export const router = () => {
-  console.log('router');
   const model = new UsersModel([]);
   const controller = new UsersController(model);
 
