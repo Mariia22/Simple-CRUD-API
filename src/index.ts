@@ -6,9 +6,7 @@ import { IncomingMessage, ServerResponse } from 'http';
 dotenv.config();
 
 const port = Number(process.env.PORT || defaultPort);
-export const server = createServer(function (req: IncomingMessage, res: ServerResponse<IncomingMessage>) {
-  router(req, res);
-});
+const server = createServer(router());
 
 server.listen(port, () => {
   console.log(`${process.pid} is running on port ${port}`);
