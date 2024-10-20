@@ -1,12 +1,12 @@
 import { IncomingMessage, ServerResponse } from 'http';
-import { regexAPI, regexAPIId } from '../config';
-import { Api404Error } from '../errors/api404Error';
-import { printApiNotFoundMessage, printInternalErrorMessage } from '../utils';
-import { BaseError } from '../errors';
-import { Internal500Error } from '../errors/internal500Error';
-import { httpMethods } from '../types';
-import { UsersController } from '../controllers/usersController';
-import { UsersModel } from '../models/usersModel';
+import { regexAPI, regexAPIId } from '../config/index.ts';
+import { Api404Error } from '../errors/api404Error.ts';
+import { printApiNotFoundMessage, printInternalErrorMessage } from '../utils.ts';
+import { BaseError } from '../errors/index.ts';
+import { Internal500Error } from '../errors/internal500Error.ts';
+import { httpMethods } from '../types/index.ts';
+import { UsersController } from '../controllers/usersController.ts';
+import { UsersModel } from '../models/usersModel.ts';
 
 export const router = () => {
   const model = new UsersModel([]);

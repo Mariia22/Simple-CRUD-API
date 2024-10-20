@@ -1,6 +1,6 @@
-import { UserController, UserModel, httpStatusCode } from '../types';
-import { IncomingMessage, ServerResponse } from 'http';
-import { getBodyFromReq, getIdFromURL } from '../utils';
+import { UserController, UserModel, httpStatusCode } from '../types/index.ts';
+import { IncomingMessage, ServerResponse } from 'node:http';
+import { getBodyFromReq, getIdFromURL } from '../utils.ts';
 
 export class UsersController implements UserController {
   constructor(private userModel: UserModel) {}

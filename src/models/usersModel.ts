@@ -1,15 +1,15 @@
 import { v4 as uuidv4, validate } from 'uuid';
-import { Api400Error } from '../errors/api400Error';
-import { Api404Error } from '../errors/api404Error';
-import { User, UserModel, UserRequest } from '../types';
+import { Api400Error } from '../errors/api400Error.ts';
+import { Api404Error } from '../errors/api404Error.ts';
+import { User, UserModel, UserRequest } from '../types/index.ts';
 import {
   printNotFoundMessage,
   printBodyBadRequestMessage,
   printBadRequestMessage,
   validateUserBody,
   printBodyBadFieldsMessage,
-} from '../utils';
-import { deletedMessage } from '../config';
+} from '../utils.ts';
+import { deletedMessage } from '../config/index.ts';
 
 export class UsersModel implements UserModel {
   constructor(private users: User[]) {}

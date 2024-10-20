@@ -1,6 +1,6 @@
 import { cpus } from 'os';
-import { UsersModel } from '../models/usersModel';
-import { IncomingMessage, ServerResponse } from 'http';
+import { UsersModel } from '../models/usersModel.ts';
+import { IncomingMessage, ServerResponse } from 'node:http';
 import cluster from 'cluster';
 
 export const multiBalancer = (port: number) => {

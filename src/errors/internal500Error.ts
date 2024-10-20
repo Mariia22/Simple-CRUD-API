@@ -1,5 +1,5 @@
-import { BaseError } from '.';
-import { httpStatusCode } from '../types';
+import { BaseError } from './index.ts';
+import { httpStatusCode } from '../types/index.ts';
 
 export class Internal500Error extends BaseError {
   constructor(message: string, statusCode = httpStatusCode.INTERNAL_SERVER) {

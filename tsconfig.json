@@ -2,12 +2,15 @@
   "compilerOptions":
   {
     "target": "ES2020",
-    "module": "commonjs",
-    "outDir": "./build/",
+    "module": "ESNext",
+    "outDir": "./build",
     "sourceMap": true,
     "noImplicitAny": true,
     "allowJs": false,
     "moduleResolution": "node",
-    "esModuleInterop": true
-  }
+    "esModuleInterop": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+  },
+"include": ["src/**/*"]
 }

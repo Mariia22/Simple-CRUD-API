@@ -2,10 +2,11 @@
   "name": "simple-crud-api",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "start:dev": "cross-env NODE_ENV=development NODE_NO_WARNINGS=1 nodemon",
+    "start:dev": "cross-env NODE_ENV=development NODE_NO_WARNINGS=1 nodemon ",
     "start:prod": "cross-env NODE_ENV=production npm run build && node ./build/index.js",
     "start:dev:multi": "cross-env NODE_ENV=development && cross-env NODE_MODE=cluster NODE_NO_WARNINGS=1 nodemon",
     "start:prod:multi": "cross-env NODE_ENV=production npm run build && cross-env NODE_MODE=cluster node ./build/index.js",

@@ -1,6 +1,6 @@
-import { IncomingMessage } from 'http';
-import { Api400Error } from './errors/api400Error';
-import { UserRequest } from './types';
+import { IncomingMessage } from 'node:http';
+import { Api400Error } from './errors/api400Error.ts';
+import { UserRequest } from './types/index.ts';
 
 export const printNotFoundMessage = (id: string): string => {
   return `User with id: ${id} is not found.`;

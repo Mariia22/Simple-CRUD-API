@@ -1,10 +1,10 @@
-const path = require('path');
+import path from 'path';
 
-module.exports = {
+export default {
   entry: './src/index.ts',
   target: 'node',
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(import.meta.dirname, 'build'),
     filename: 'index.js',
   },
   module: {
@@ -12,11 +12,11 @@ module.exports = {
       {
         test: /\.ts$/,
         use: 'ts-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
     ],
   },
   resolve: {
-    extensions: ['.ts']
-  }
+    extensions: ['.ts'],
+  },
 };

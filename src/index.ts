@@ -1,9 +1,10 @@
 import * as dotenv from 'dotenv';
-import { defaultPort } from './config';
-import { createServer } from 'http';
-import { router } from './router';
-import { multiBalancer } from './multi';
-import cluster from 'cluster';
+import { createServer } from 'node:http';
+import cluster from 'node:cluster';
+import { defaultPort } from './config/index.ts';
+import { multiBalancer } from './multi/index.ts';
+import { router } from './router/index.ts';
+
 dotenv.config();
 
 const multi = 'cluster';
